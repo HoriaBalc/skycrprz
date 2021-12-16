@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+    <script src="./consumer.js" defer></script>
+    <script src="./logout.js" defer></script>
+    <link rel="stylesheet" href="./consumer.css">
+    <title>Consumer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+
+
+    <header class="container">
+        <div id="title">
+            <a href="#"><img src="./logo.png" alt="logo" width=50 height=70></a>
+        </div>
+        <nav class="nav-mobile">
+
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul class="links-mobile">
+                    <a href="#">
+                        <li>Acasa</li>
+                    </a>
+                    <a href="./updateUser.html">
+                        <li>Profil</li>
+                    </a>
+                    <a href="#" onclick="logout()">
+                        <li>Deconecteaza-te</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="nav-desktop">
+            <ul class="links-desktop">
+                <a href="#">
+                    <li>Acasa</li>
+                </a>
+                <a href="./updateUser.html">
+                    <li>Profil</li>
+                </a>
+                <a href="#" onclick="logout()">
+                    <li>Deconecteaza-te</li>
+                </a>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <form id="search">
+            <div>
+                <div class="inner-form">
+                    <div class="input-field">
+                        <input class="form-control" id="search-bar" type="text" placeholder="Scrie pentru a cauta..." />
+                        <button id="search-btn" type="button" onclick="search()"> Cauta <i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="suggestion-wrap">
+                    <span><a href="./consumer.html">Exploreaza</a></span>
+                    <span><a href="./order.html">Comenzi</a></span>
+                    <span><a href="./producer-product.html">Magazin</a></span>
+                </div>
+            </div>
+        </form>
+
+        <div class="maincategories" id="maincategories">
+
+        </div>
+
+    </main>
+
+
+    <div id="products">
+
+    </div>
+
+    <div id="productsCategory">
+
+    </div>
+
+
+</body>
+
+</html>

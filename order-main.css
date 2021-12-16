@@ -1,0 +1,32 @@
+body {
+    margin: 0rem;
+    background-image: url("background.jpg");
+    color: green;
+}
+
+main {
+    position: relative;
+    top: 7rem;
+}
+
+.product div {
+    display: flex;
+    flex-direction: row;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.product span {
+    padding: 1rem;
+}
+
+b {
+    padding: 0.5em;
+}

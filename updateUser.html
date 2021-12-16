@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+
+    <title>Product</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+    <script src="./updateUser.js" defer></script>
+    <script src="./logout.js" defer></script>
+
+    <link rel="stylesheet" href="./updateUser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header class="container">
+
+        <div id="title">
+            <a href="#"><img src="./logo.png" alt="logo" width=50 height=70></a>
+        </div>
+        <nav class="nav-mobile">
+
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul class="links-mobile">
+                    <a href="./consumer.html">
+                        <li>Acasa</li>
+                    </a>
+                    <a href="./consumer.html">
+                        <li>Exploreaza</li>
+                    </a>
+                    <a href="#" onclick="logout()">
+                        <li>Deconecteaza-te</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="nav-desktop">
+            <ul class="links-desktop">
+                <a href="./consumer.html">
+                    <li>Acasa</li>
+                </a>
+                <a href="./consumer.html">
+                    <li>Exploreaza</li>
+                </a>
+                <a href="#" onclick="logout()">
+                    <li>Deconecteaza-te</li>
+                </a>
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+
+
+    <main>
+        <div class="product" id="product">
+
+            <form id="form" action="consumer.html" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="email">Email: </label>
+                    <input id="email" type="text" required="" required pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                </div>
+                <div>
+                    <label for="parola">Parola: </label>
+                    <input id="parola" type="password" required="">
+                </div>
+                <div>
+                    <label for="confirm">Confirma parola: </label>
+                    <input id="confirm" type="password" required="">
+                </div>
+                <div>
+                    <label for="firstName">First name: </label>
+                    <input id="firstName" type="text" required="" maxlength="64" minlength="3">
+                </div>
+
+                <div>
+                    <label for="lastName">Last name:</label>
+                    <input id="lastName" type="text" required="" maxlength="64" minlength="3">
+                </div>
+
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input id="phone" type="text" placeholder="07222222222" required="" min=0>
+                </div>
+
+
+                <div>
+
+                    <button type="button" onclick="update()">Modifica</button>
+                </div>
+
+
+            </form>
+
+
+
+        </div>
+
+
+    </main>
+
+
+
+
+
+
+</body>
+
+</html>

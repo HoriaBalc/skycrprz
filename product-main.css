@@ -1,0 +1,128 @@
+            body {
+                margin: 0;
+                background-color: rgb(255, 255, 190);
+                background-image: url("background.jpg");
+                background-size: 100% 130%;
+                font-weight: bold;
+                color: green;
+            }
+            
+            label {
+                font-weight: bold;
+                color: green;
+                margin: 1rem;
+            }
+            
+            .product {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                top: 7rem;
+            }
+            
+            .product div {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .product img {
+                width: 25rem;
+                height: 25rem;
+                border-radius: 2rem;
+                border-color: #000;
+                border-style: solid;
+                border-width: 0.1rem;
+                margin-right: 2rem;
+                margin-left: 2rem;
+            }
+            
+            .product span {
+                padding: 1rem;
+            }
+            
+            b {
+                padding: 0.5em;
+            }
+            
+            .orderbtn {
+                background-color: green;
+                color: white;
+                border-radius: 1rem;
+                border-color: yellowgreen;
+                border-width: 0.1rem;
+                width: 25rem;
+                height: 3rem;
+                margin: 1rem;
+                padding: 0.5rem;
+                cursor: pointer;
+            }
+            
+            .orderbtn:hover {
+                background-color: white;
+                color: rgb(0, 71, 0);
+                font-weight: bold;
+            }
+            
+            input {
+                width: 100%;
+                background: #e0dede;
+                justify-content: center;
+                display: flex;
+                margin: auto;
+                padding: 1rem;
+                border: none;
+                outline: none;
+                border-radius: 1rem;
+            }
+            
+            @media screen and (max-width:769px) {
+                .product {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .product img {
+                    width: 20rem;
+                    height: 20rem;
+                    margin-right: 1rem;
+                    margin-left: 1rem;
+                }
+                .orderbtn {
+                    width: 7rem;
+                    height: 3rem;
+                }
+                .product img {
+                    width: 12rem;
+                    height: 12rem;
+                }
+            }
+            
+            @media screen and (max-width:340px) {
+                .product {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .product img {
+                    width: 15rem;
+                    height: 15rem;
+                }
+                .orderbtn {
+                    width: 7rem;
+                    height: 3rem;
+                }
+            }
+            
+            #order {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                top: 7rem;
+                align-items: center;
+            }
+            
+            #order div {
+                padding: 0.5rem;
+            }
+            
+            #confirmOrder {
+                display: none;
+            }

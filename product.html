@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+
+    <title>Product</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+    <script src="./product.js" defer></script>
+    <script src="./logout.js" defer></script>
+    <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <header class="container">
+        <div id="title">
+            <a href="#"><img src="./logo.png" alt="logo" width=50 height=70></a>
+        </div>
+        <nav class="nav-mobile">
+
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul class="links-mobile">
+                    <a href="./consumer.html">
+                        <li>Acasa</li>
+                    </a>
+                    <a href="./consumer.html">
+                        <li>Exploreaza</li>
+                    </a>
+                    <a href="#" onclick="logout()">
+                        <li>Deconecteaza-te</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="nav-desktop">
+            <ul class="links-desktop">
+                <a href="./consumer.html">
+                    <li>Acasa</li>
+                </a>
+                <a href="./consumer.html">
+                    <li>Exploreaza</li>
+                </a>
+                <a href="#" onclick="logout()">
+                    <li>Deconecteaza-te</li>
+                </a>
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+    <main>
+        <div class="product" id="product">
+            <div>
+                <img id="product-img" src="" alt="product-img">
+            </div>
+            <div>
+                <span id="1"> <b>Produs: </b> </span>
+                <span id="2"> <b>Pret/kg: </b> </span>
+                <span id="3"> <b>Cantitate: </b> </span>
+                <span id="4"> <b> Producator: </b> </span>
+                <span id="5"> <b>Descriere: </b> </span>
+            </div>
+
+
+
+        </div>
+        <div id="order">
+
+            <h3>Comandati acest produs</h3>
+            <form>
+                <div>
+                    <input type="text" name="" id="city" placeholder="Oras" required="">
+                </div>
+                <div>
+                    <input type="text" id="address" placeholder="Adresa" required="">
+                </div>
+
+
+                <div>
+                    <label for="quantity">Alege cantitatea: </label>
+                    <input id="quantity" type="number" name="" required="" min=0>
+                </div>
+
+            </form>
+
+            <button class="orderbtn" onclick="order()">Make an order</button>
+        </div>
+
+
+    </main>
+
+
+
+
+
+
+</body>
+
+</html>
