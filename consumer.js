@@ -1,4 +1,5 @@
 let category = [];
+let idC = localStorage.getItem('ID');
 
 fetch('https://skyscraprzceresapp.azurewebsites.net/Products/GetCategories', {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -34,10 +35,13 @@ fetch('https://skyscraprzceresapp.azurewebsites.net/Products/GetCategories', {
                     let img = document.createElement("img");
                     img.width = 80;
                     img.height = 80;
-                    /* if (i === 0) {
-                         category[i].image.imageURL = "vegetables.jpg";
-                     }*/
+                    if (i === 0) {
+                        category[i].image.imageURL = "./vegetables.png";
+                    }
                     img.src = category[i].image.imageURL;
+                    img.style.position = "relative";
+                    img.style.top = "-1rem";
+
                     let spanText = document.createElement("span");
                     spanText.innerHTML = category[i].name;
                     spanText.className = "span-text";
@@ -60,6 +64,66 @@ fetch('https://skyscraprzceresapp.azurewebsites.net/Products/GetCategories', {
     .catch(error => {
         console.log('Error');
     })
+
+function see() {
+
+
+
+
+    let name = localStorage.getItem('name');
+    let description = localStorage.getItem('description');
+    let price = localStorage.getItem('price');
+    let quantity = localStorage.getItem('quantity');
+    let categoryName = localStorage.getItem('category');
+    let img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
+
+
+
+
+
+    let a = document.createElement("a");
+    a.href = "updateProduct.html";
+    a.className = "link";
+    a.id = id;
+    let productElement = document.createElement("div");
+    productElement.className = "product";
+    let fieldset = document.createElement("fieldset");
+    let legend = document.createElement("legend");
+    legend.innerHTML = name;
+    let divImg = document.createElement("div");
+    let imag = document.createElement("img");
+    imag.src = img;
+    console.log(img);
+    imag.style.position = "relative";
+    imag.style.top = "1rem";
+    divImg.appendChild(imag);
+    let divSpan = document.createElement("div");
+    let span1 = document.createElement("span");
+    let span2 = document.createElement("span");
+    //let span3 = document.createElement("span");
+    let span4 = document.createElement("span");
+    span1.innerHTML = "Pret/Kg: " + price;
+    span2.innerHTML = "Cantitate: " + quantity;
+    //span3.innerHTML = "Producator: " + productsData[i].shop;
+    span4.innerHTML = "Descriere: " + description;
+    divSpan.appendChild(span1);
+    divSpan.appendChild(span2);
+    //divSpan.appendChild(span3);
+    divSpan.appendChild(span4);
+    fieldset.appendChild(legend);
+    fieldset.appendChild(divImg);
+    fieldset.appendChild(divSpan);
+    productElement.appendChild(fieldset);
+    a.appendChild(productElement);
+    let products = document.getElementById("products");
+
+
+    products.appendChild(a);
+
+
+};
+
+
 
 let productsData = [];
 
@@ -109,11 +173,11 @@ async function seeProducts(category, string) {
                             let span4 = document.createElement("span");
                             span1.innerHTML = "Pret/Kg: " + productsData[i].price;
                             span2.innerHTML = "Cantitate: " + productsData[i].quantity;
-                            span3.innerHTML = "Producator: " + productsData[i].shop;
+
                             span4.innerHTML = "Descriere: " + productsData[i].description;
                             divSpan.appendChild(span1);
                             divSpan.appendChild(span2);
-                            divSpan.appendChild(span3);
+
                             divSpan.appendChild(span4);
                             fieldset.appendChild(legend);
                             fieldset.appendChild(divImg);
@@ -166,9 +230,9 @@ function selectText(containerid) {
 const onClick = function() {
 
     localStorage.setItem("PRODUCT", this.id);
-    alert(this.id + " " + this.innerHTML);
+    //alert(this.id + " " + this.innerHTML);
     let el = this.getElementsByTagName('img')
-    alert(el[0].src);
+        //alert(el[0].src);
     localStorage.setItem("IMG", el[0].src);
 
 }
@@ -200,7 +264,7 @@ async function search() {
         prods[0].parentNode.removeChild(prods[0]);
     }
     await fetch('https://skyscraprzceresapp.azurewebsites.net/Products/GetCategories', {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            method: 'GET',
             mode: "cors",
             headers: {
                 'Content-Type': 'application/json',
@@ -231,4 +295,7 @@ async function search() {
             console.log('Error');
         })
 
+}
+if (idC > 6) {
+    see();
 }

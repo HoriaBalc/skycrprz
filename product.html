@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
     <script src="./product.js" defer></script>
     <script src="./logout.js" defer></script>
+
     <link rel="stylesheet" href="./product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -62,43 +63,37 @@
 
     </header>
 
-    <main>
+    <main id="main">
         <div class="product" id="product">
             <div>
                 <img id="product-img" src="" alt="product-img">
             </div>
-            <div>
-                <span id="1"> <b>Produs: </b> </span>
-                <span id="2"> <b>Pret/kg: </b> </span>
-                <span id="3"> <b>Cantitate: </b> </span>
-                <span id="4"> <b> Producator: </b> </span>
-                <span id="5"> <b>Descriere: </b> </span>
-            </div>
-
-
-
-        </div>
-        <div id="order">
-
-            <h3>Comandati acest produs</h3>
             <form>
                 <div>
-                    <input type="text" name="" id="city" placeholder="Oras" required="">
-                </div>
-                <div>
-                    <input type="text" id="address" placeholder="Adresa" required="">
-                </div>
+                    <span id="1"> <b>Produs: </b> </span>
+                    <span id="2"> <b>Pret/kg: </b> </span>
+                    <span id="3"> <b>Cantitate: </b> </span>
+                    <span id="5"> <b>Descriere: </b> </span>
+
+                    <div id="order">
+
+                        <h3>Comandati acest produs</h3>
+
+                        <label for="quantity">Alege cantitatea: </label>
+                        <input id="quantity" type="number" name="" required="" min=1>
+                        <button class="orderbtn" onclick="order()">Comanda</button>
 
 
-                <div>
-                    <label for="quantity">Alege cantitatea: </label>
-                    <input id="quantity" type="number" name="" required="" min=0>
+                    </div>
                 </div>
-
             </form>
 
-            <button class="orderbtn" onclick="order()">Make an order</button>
+
+
+
+
         </div>
+
 
 
     </main>

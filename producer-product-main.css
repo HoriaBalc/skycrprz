@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    background-color: rgb(255, 255, 190);
+    background-color: rgb(253, 253, 136);
+    ;
 }
 
 button,
@@ -171,8 +172,8 @@ main {
 }
 
 .product fieldset div img {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     border-width: 0.1rem;
     border-color: #000;
     border-radius: 1rem;

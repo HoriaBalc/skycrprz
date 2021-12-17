@@ -31,7 +31,10 @@ fetch('https://skyscraprzceresapp.azurewebsites.net/Products/GetCategories', {
         console.log('Error');
     })
 
+
 localStorage.setItem('ID', 5);
+
+
 
 function addProd() {
     let id = localStorage.getItem('ID');
@@ -82,15 +85,20 @@ function addProd() {
             body: JSON.stringify(data)
         }).then(res => {
 
-            console.log(res.status);
-            console.log(res);
-            console.log(data.phoneNumber + data.shop + data.category + data.image);
 
-            if (res.ok) {
+            if (res.ok && data.name !== "" && data.description !== "" && data.quantity !== "" && data.price !== "") {
                 if (res.status === 200) {
 
                     localStorage.setItem('ID', id);
                     alert("Produsul tau a fost adaugat cu success");
+                    let prod = { name: data.name, description: data.description, quantity: data.quantity, price: data.price };
+                    console.log(prod);
+                    //functie repetitiva care sa verifice daca e schimbat sau nu in session storage id
+                    localStorage.setItem('name', data.name);
+                    localStorage.setItem('description', data.description);
+                    localStorage.setItem('price', data.price);
+                    localStorage.setItem('quantity', data.quantity);
+                    localStorage.setItem('category', category);
                     window.location.replace('./producer-product.html');
 
                 }

@@ -1,23 +1,10 @@
-function order() {
-
-    let response = document.createElement("h3");
-    let quantity = document.querySelector("#quantity");
-    console.log(quantity.value);
-    response.innerHTML = "";
-    if (document.querySelector("#city").value !== "" && document.querySelector("#address").value !== "") {
-
-    }
-
-}
-
-let prodId = localStorage.getItem('PRODUCT');
-let img = localStorage.getItem("IMG");
-console.log(prodId);
 product();
 
 function product() {
+    let prodId = localStorage.getItem('PRODUCT');
+    let img = localStorage.getItem("IMG");
     fetch('https://skyscraprzceresapp.azurewebsites.net/Products/Details/' + prodId, {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            method: 'GET',
             mode: "cors",
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +18,7 @@ function product() {
         })
         .then(res => {
             if (res.ok) {
-                //console.log(res.json())
+                console.log(res.data)
                 res.json().then(data => {
                     console.log(data);
                     let prod = document.getElementById('product-img');
@@ -43,8 +30,8 @@ function product() {
                     let span5 = document.getElementById('5');
                     span1.append(data.name);
                     span2.append(data.price);
-                    span3.append(data.quantity);
-                    span4.append(data.shop);
+                    span3.append(data.quantity + " kg");
+                    //span4.append(data.shop);
                     span5.append(data.description);
 
                 });
@@ -54,4 +41,24 @@ function product() {
         .catch(error => {
             console.log('Error');
         })
+}
+
+function order() {
+
+    let quantity = document.querySelector("#quantity").value;
+
+    console.log(quantity);
+    if (quantity >= 1) {
+
+        alert("Ati plasat comanda cu success");
+        sessionStorage.setItem('Nume', document.getElementById('1').innerText);
+        sessionStorage.setItem('Pret', document.getElementById('2').innerText);
+        sessionStorage.setItem('Cant', quantity);
+        window.location.replace('./consumer.html');
+
+
+    }
+
+
+
 }

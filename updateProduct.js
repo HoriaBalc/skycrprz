@@ -40,9 +40,9 @@ function updateProd() {
     let price = document.getElementById("pret").value;
     let quantity = document.getElementById("cantitate").value;
     let phoneNumber = "";
-    let category = document.getElementById("category").value;
-    let id = localStorage.getItem('ID');
-    id++;
+    let category = "";
+    //let id = localStorage.getItem('ID');
+    //id++;
     let shop = 0;
     let image = "";
 
@@ -58,6 +58,15 @@ function updateProd() {
         category,
         image,
     }
+
+    if (data.name !== "" && data.description !== "" && data.quantity !== "" && data.price !== "") {
+        localStorage.setItem('ID', id);
+        alert("Produsul tau a fost modificat cu success");
+        window.location.replace('./producer-product.html');
+    } else {
+        alert("A avut loc o eroare");
+    }
+
 
 
 }
@@ -70,9 +79,9 @@ function deleteProd() {
     let price = document.getElementById("pret").value;
     let quantity = document.getElementById("cantitate").value;
     let phoneNumber = "";
-    let category = document.getElementById("category").value;
-    let id = localStorage.getItem('ID');
-    id++;
+    let category = " ";
+    //let id = localStorage.getItem('ID');
+    //id++;
     let shop = 0;
     let image = "";
 
@@ -88,6 +97,6 @@ function deleteProd() {
         category,
         image,
     }
-
+    window.location.replace('./producer-product.html');
 
 }
